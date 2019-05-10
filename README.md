@@ -1,6 +1,6 @@
 # Beet: Vue Boilerplate
 
-This is a sample application based on vue, vuex and router that shows how to interact with Beet. It is based
+This is a sample application based on vue, vuex and router that shows how to interact with Beet, preloaded with bootstrap as the front-end library. It is based
 on `Vue CLI`, for more details see https://cli.vuejs.org/guide/creating-a-project.html#vue-create.
 
 ## Get your local copy
