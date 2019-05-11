@@ -1,0 +1,53 @@
+<template>
+	<form class="transfer-form md-layout md-gutter md-alignment-center-space-between" @submit.prevent="onSubmit">
+	    <div class="md-layout-item md-size-15">
+	    	{{ name }}
+	    </div>
+	    <div class="md-layout-item">
+	    	<input type="text" placeholder="Donor" v-model="donor"></input>
+	    </div>
+	    <div class="md-layout-item">
+	    	<input type="number" placeholder="Amount" v-model="amount"></input>
+	    </div>
+	    <div class="md-layout-item">
+	    	<md-button type="submit" class="md-raised">Transfer</md-button>
+	   	</div>
+	</form>
+</template>
+<script>
+    import beeet from "@/beet";
+    import { MdButton, MdList } from 'vue-material/dist/components'
+
+	export default {
+        name: "Student",
+        props: {
+            name: String,
+        },
+        methods: {
+        	onSubmit() {
+        		console.log(this.donor, this.amount);
+        	}
+        	        // onSubmit() {
+            // console.log(this.donor, this.amount)
+          // if(this.name && this.review && this.rating) {
+          //   let productReview = {
+          //     name: this.name,
+          //     review: this.review,
+          //     rating: this.rating
+          //   }
+          //   this.$emit('review-submitted', productReview)
+          //   this.name = null
+          //   this.review = null
+          //   this.rating = null
+          // } else {
+          //   if(!this.name) this.errors.push("Name required.")
+          //   if(!this.review) this.errors.push("Review required.")
+          //   if(!this.rating) this.errors.push("Rating required.")
+          // }
+        }
+    };
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+</style>

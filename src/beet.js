@@ -7,7 +7,7 @@ const BEET_APP_NAME = "Beet Vue Boilerplate";
 /*
     Allowed chain to connect to (i.e. what accounts/chain the user can select from when connecting in Beet)
  */
-const TARGET_CHAIN = "BTS";
+const TARGET_CHAIN = "BTS_TEST";
 
 class Beet {
 
