@@ -1,17 +1,17 @@
 <template>
     <ContentCard>
-        <div class="hello" v-if="account">
+        <!-- <div class="hello" v-if="account">
             <span>You are logged in as </span>
             <BitSharesAccount :name="account.name" :id="account.id"/>
             <span> from blockchain {{ account.chain.name }}</span>
-        </div>
+        </div> -->
         <div class="students" v-if="account">
-            <span class="md-display-2">Students</span>
-            <md-list id="students">
-                <md-list-item v-for="student in students" v-bind:key="student.id">
-                    <Student :name="student.name" :grade="student.grade"/>
-                </md-list-item>
-            </md-list>
+            <md-table v-model="students" md-card>
+                <md-table-toolbar>
+                    <h1 class="md-title">Students</h1>
+                </md-table-toolbar>
+                <Student slot="md-table-row" slot-scope="{ item }" :name="item.name" :grade="item.grade" :id="item.id"/>
+            </md-table>
         </div>
     </ContentCard>
 </template>
@@ -48,6 +48,30 @@
                 }, {
                     id: 3,
                     name: 'Liam',
+                    grade: 'B'
+                }, {
+                    id: 4,
+                    name: 'Bobby',
+                    grade: 'C'
+                }, {
+                    id: 5,
+                    name: 'Ava',
+                    grade: 'A'
+                }, {
+                    id: 6,
+                    name: 'Sammy',
+                    grade: 'B'
+                }, {
+                    id: 4,
+                    name: 'Kate',
+                    grade: 'C'
+                }, {
+                    id: 5,
+                    name: 'Marc',
+                    grade: 'A'
+                }, {
+                    id: 6,
+                    name: 'Will',
                     grade: 'B'
                 }]
             }

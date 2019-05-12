@@ -14,5 +14,6 @@
 <style scoped lang="less">
 	.content-card {
 		width: 1080px;
+		text-align: left;
 	}
 </style>
