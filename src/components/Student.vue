@@ -1,28 +1,37 @@
 <template>
-	<form class="transfer-form md-layout md-gutter md-alignment-center-space-between" @submit.prevent="onSubmit">
-	    <div class="md-layout-item md-size-15">
-	    	{{ name }}
-	    </div>
-	    <div class="md-layout-item">
-	    	<input type="text" placeholder="Donor" v-model="donor"></input>
-	    </div>
-	    <div class="md-layout-item">
-	    	<input type="number" placeholder="Amount" v-model="amount"></input>
-	    </div>
-	    <div class="md-layout-item">
-	    	<md-button type="submit" class="md-raised">Transfer</md-button>
-	   	</div>
+	<form class="transfer-form">
+		<div class="md-layout md-gutter md-alignment-center-space-between">
+		    <div class="md-layout-item md-size-15">
+		    	<span class="md-display-1">{{ name }}</span>
+		    </div>
+		    <div class="md-layout-item">
+		    	<md-field>
+		    		<md-input type="text" placeholder="Donor" v-model="donor"></md-input>
+		    	</md-field>
+		    </div>
+		    <div class="md-layout-item">
+		    	<md-field>
+		    		<md-input type="number" placeholder="Amount" v-model="amount"></md-input>
+		    	</md-field>
+		    </div>
+		    <div class="md-layout-item">
+		    	<md-button class="md-raised" @click.prevent="onSubmit">Transfer</md-button>
+		   	</div>
+		</div>
 	</form>
 </template>
 <script>
     import beeet from "@/beet";
-    import { MdButton, MdList } from 'vue-material/dist/components'
 
 	export default {
         name: "Student",
         props: {
             name: String,
         },
+        data: () => ({
+        	donor: null,
+        	amount: null,
+        }),
         methods: {
         	onSubmit() {
         		console.log(this.donor, this.amount);
@@ -50,4 +59,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+	.transfer-form {
+		width: 100%
+	}
 </style>

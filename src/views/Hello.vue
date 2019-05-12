@@ -5,9 +5,9 @@
             <BitSharesAccount :name="account.name" :id="account.id"/>
             <span> from blockchain {{ account.chain.name }}</span>
         </div>
-        <div class="students">
+        <div class="students" v-if="account">
             <md-list id="students">
-                <md-list-item v-for="student in students">
+                <md-list-item v-for="student in students" v-bind:key="student.id">
                     <Student :name="student.name"/>
                 </md-list-item>
             </md-list>
@@ -23,6 +23,7 @@
     import BitSharesAccount from "../components/BitSharesAccount";
     import Student from '../components/Student';
 
+
     export default {
         name: "hello",
         components: {
@@ -36,10 +37,13 @@
                 //
                 account: null,
                 students: [{
+                    id: 1,
                     name: 'Noah'
                 }, {
+                    id: 2,
                     name: 'Olivia'
                 }, {
+                    id: 3,
                     name: 'Liam'
                 }]
             }
