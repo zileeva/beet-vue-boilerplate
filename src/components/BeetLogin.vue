@@ -1,24 +1,20 @@
 <template>
-    <div class="login container">
-        <p v-if="$route.params.next">
-            You need to be logged in to use this.
-        </p>
-        <button class="button" @click="connectToBeet">
-            <BeetLogo/>
-            <h1 class="title">Login</h1>
-            <div class="sub-title">
-                with Beet
+    <div id="login-page" class="mx-auto">
+        <Background />
+        <div class="login-wrapper md-layout md-alignment-center-left">
+            <div class="md-layout-item md-size-100">
+                <div class="md-layout-item md-size-100">
+                    <span class="md-display-3 bold">Hey, School!</span>
+                </div>
+                <div class="md-layout-item md-size-100">
+                    <md-button class="md-raised md-accent login-button" @click="connectToBeet">
+                        Login with Beet
+                    </md-button>
+                </div>
             </div>
-        </button>
-        <div>
-        <b-button variant="light outline-primary" class="m-3" @click="showBeetExplanation"><span class="font-italic">"I don't know what Beet is"</span></b-button>
-        <div v-if="explainBeet">
-            <h4>Beet - Your Blockchain Compagnion</h4>
-            <p>
-                Beet is a stand-alone key and identity manager and signing app for blockchains -- originally evolved from the BitShares Blockchain. Beet is installed locally on your computer and allows separate account management while being in full control of what data to expose to third parties. Private keys are locally stored and encrypted, protected by a wallet master password. All transactions suggested by third parties must be confirmed before being broadcast.
-            </p>
-            <b-button @click="goToBeet">Install Beet now</b-button>
-        </div>
+            <div class="md-layout-item md-size-100">
+                <span class="md-subheading accent">Grades 4 Bits</span>
+            </div>
         </div>
     </div>
 </template>
@@ -26,6 +22,7 @@
 <script>
     // @ is an alias to /src
     import BeetLogo from "./logos/BeetLogo";
+    import Background from "./logos/Background";
     import beeet from "@/beet";
 
     import { mapState, mapActions } from 'vuex'
@@ -33,7 +30,8 @@
     export default {
         name: "home",
         components: {
-            BeetLogo
+            BeetLogo,
+            Background
         },
         data() {
             return {
@@ -64,6 +62,27 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+    .md-display-3.bold {
+        font-weight: 700;
+    }
+
+    .md-subheading.accent {
+        color: var(--md-theme-default-accent-on-background, #ff5252)
+    }
+
+    #login-page {
+        min-height: 100vh;
+        width: 1080px;
+    }
+
+    .login-wrapper {
+        text-align: left;
+        min-height: 100vh;
+    }
+
+    .login-button {
+        margin: 30px 0;
+    }
 
     .popover {
         max-width: 800px !important;

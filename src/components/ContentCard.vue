@@ -1,5 +1,5 @@
 <template>
-    <div class="m-3">
+    <div class="m-3 content-card mx-auto">
         <slot></slot>
     </div>
 </template>
@@ -12,4 +12,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+	.content-card {
+		width: 1080px;
+	}
 </style>

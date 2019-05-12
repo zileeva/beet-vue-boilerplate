@@ -1,5 +1,5 @@
 <template>
-    <a :href="'https://open-explorer.io/#/accounts/' + name">{{name}}{{id && "(" + id + ")"}}</a>
+    <a :href="'https://open-explorer.io/#/accounts/' + name" class="md-accent">{{name}}{{id && "(" + id + ")"}}</a>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
 <template>
-    <ContentCard>
-        <BeetLogin />
-    </ContentCard>
+    <BeetLogin />
 </template>
 
 <script>

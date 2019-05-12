@@ -6,9 +6,10 @@
             <span> from blockchain {{ account.chain.name }}</span>
         </div>
         <div class="students" v-if="account">
+            <span class="md-display-2">Students</span>
             <md-list id="students">
                 <md-list-item v-for="student in students" v-bind:key="student.id">
-                    <Student :name="student.name"/>
+                    <Student :name="student.name" :grade="student.grade"/>
                 </md-list-item>
             </md-list>
         </div>
@@ -38,13 +39,16 @@
                 account: null,
                 students: [{
                     id: 1,
-                    name: 'Noah'
+                    name: 'Noah',
+                    grade: 'A'
                 }, {
                     id: 2,
-                    name: 'Olivia'
+                    name: 'Olivia',
+                    grade: 'A'
                 }, {
                     id: 3,
-                    name: 'Liam'
+                    name: 'Liam',
+                    grade: 'B'
                 }]
             }
         },

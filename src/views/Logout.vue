@@ -17,7 +17,7 @@
         created() {
             this.beet.disconnect();
             this.logout();
-            this.$router.push({name: "home"});
+            this.$router.push({name: "login"});
         },
         methods: {
             ...mapActions("accounts", {
